@@ -1,11 +1,9 @@
----
 kind: pipeline
 type: kubernetes
 name: default
 
 steps:
-- name: greeting
-  image: golang:1.12
+- name: backend
+  image: python:latest
   commands:
-  - go build
-  - go test
+  - python -m pip install --upgrade pip -r requirements.txt
